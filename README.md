@@ -1,4 +1,4 @@
-# Ask Experts with AngularJS
+# Ask-Experts with AngularJS
 
 ##### A website that allows users to post questions and get replies by other users/experts. (9/23/15)
 

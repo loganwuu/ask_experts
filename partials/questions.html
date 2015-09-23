@@ -1,20 +1,33 @@
 <div ng-show="questions.length">
-  <h1>Here are all of your questions:</h1>
+  <h4>Search Questions using key terms you wish to look for:</h4>
+  <form class="form-inline" role="form">
+    <div class="form-group">
+      <input ng-model="query" type="text" class="form-control" id="question-name" placeholder="Search" required>
+    </div>
+
+  </form>
+
+  <h1 ng-show="questions.length && filtered.length">Here are all of your questions:</h1>
+  <h1 ng-show="questions.length && !filtered.length">No Matches</h1>
   <ul>
-    <li ng-repeat="item in questions">
+    <li ng-repeat="item in filtered = (questions | filter:query)">
       <a ui-sref="questions.answers({ questionId: item.id })">{{ item.name }}</a>
     </li>
   </ul>
 </div>
 
-<div class="col-md-4">
-  <h3>Add a new question</h3>
+
+
+
+<div ui-view></div>
+
+<hr/>
+<!-- <div class="col-md-4"> -->
+  <h2>Add a new question</h2>
   <form ng-submit="QuestionsFactory.addQuestion()" class="form-inline" role="form">
     <div class="form-group">
-      <input type="text" ng-model="QuestionsFactory.questionName" class="form-control" placeholder="Enter a question">
+      <input type="text" ng-model="QuestionsFactory.questionName" class="form-control" placeholder="Enter a question" required>
     </div>
     <button type="submit" class="btn btn-default">Submit</button>
   </form>
-</div>
-
-<div ui-view> </div>
+<!-- </div> -->
