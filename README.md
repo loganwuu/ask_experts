@@ -1,15 +1,15 @@
 # Ask-Experts with AngularJS
 
-##### A website that allows users to post questions and get replies by other users/experts. (9/23/15)
+##### A website that allows users to post questions and get replies by other experts. (9/23/15)
 
 #### By Logan Wu & Chris Swan
 
 ## Description
-An app that allows a user to post a question for the world to view, and give a chance for experts(or internet trolls) to reply and give them useful information.
+An app that allows users to post questions for the world to view, and get a chance for experts(or internet trolls) to reply and give them helpful information. Answered questions can be filtered out from unanswered ones and answers can be upvoted and downvoted. Comments can also be added to each answer submitted. Search function is also added to search through the existing questions.
 
 ## Setup
 
-* Clone the project using the link provided on Github in the Terminal.
+* Clone the project using the link provided on Github in the Terminal by using ```git clone```.
 * If you are on a mac, use Terminal to type in ```python -m SimpleHTTPServer``` from the top level of the project folder.
 open browser to ```localhost:8000``` to view site.
 

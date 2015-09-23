@@ -17,4 +17,10 @@ AskExperts.config(function($stateProvider, $urlRouterProvider) {
     templateUrl: "partials/questions.answers.html",
     controller: 'AnswersCtrl'
   });
+
+  $stateProvider.state('answers.comments', {
+    url: "/:answerId",
+    templateUrl: "partials/answers.comments.html",
+    controller: 'CommentsCtrl'
+  });
 });
