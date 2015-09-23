@@ -1,7 +1,7 @@
-<div ng-show="questions.answers.length">
+<div ng-show="question.answers.length">
   <h2>Answers for {{ question.name }}</h2>
   <ul>
-    <li ng-repeat="item in questions.answers">
+    <li ng-repeat="item in question.answers">
       {{ item.name }}
     </li>
   </ul>
