@@ -1,10 +1,12 @@
 <div ng-show="questions.length">
-  <h4>Search Questions using key terms you wish to look for:</h4>
+  <h4>Search questions by key terms:</h4>
   <form class="form-inline" role="form">
     <div class="form-group">
-      <input ng-model="query" type="text" class="form-control" id="question-name" placeholder="Search" required>
+      <input ng-model="query.$" type="text" class="form-control" id="question-name" required>
+      <div id="checkbox">
+        <label><input ng-model="query.answered" type="checkbox" class="form-control" ng-true-value="true" ng-false-value="" toggle-class="toggle-calm">Show answered question(s) only</label>
+      </div>
     </div>
-
   </form>
 
   <h1 ng-show="questions.length && filtered.length">Here are all of your questions:</h1>
@@ -15,9 +17,6 @@
     </li>
   </ul>
 </div>
-
-
-
 
 <div ui-view></div>
 
