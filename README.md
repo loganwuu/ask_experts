@@ -1,11 +1,11 @@
-# Course Roster with AngularJS
+# Ask Experts with AngularJS
 
-##### A website that allows users to create a course roster and add students to each course. (9/22/15)
+##### A website that allows users to post questions and get replies by other users/experts. (9/23/15)
 
 #### By Logan Wu & Chris Swan
 
 ## Description
-An app that allows you to add classes and add students to classes.
+An app that allows a user to post a question for the world to view, and give a chance for experts(or internet trolls) to reply and give them useful information.
 
 ## Setup
 
