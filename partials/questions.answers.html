@@ -4,12 +4,19 @@
     <li ng-repeat="item in question.answers | orderBy: '-totalVote'">
       <div class="row">
         <div class="col-md-1">
-          <a href="" ng-click="addUpvote(item)"><i class="fa fa-arrow-circle-up"></i></a>{{ item.upvotes }}<br>
-          <a href="" ng-click="addDownvote(item)"><i class="fa fa-arrow-circle-down"></i></a> {{ item.downvotes }} <br>
-          <p>{{ item.totalVote }}</p>
+          <a href="" ng-click="addUpvote(item)"><i class="fa fa-arrow-circle-up"></i></a> {{ item.totalVote }} <a href="" ng-click="addDownvote(item)"><i class="fa fa-arrow-circle-down"></i></a>
         </div>
-        <div class="col-md-4">
-            <a ui-sref="answers.comments({ answerId: item.id })">{{ item.name }}</a> <button type="submit" class="btn btn-xs btn-danger" ng-click="deleteAnswer(item)">Delete</button>
+        <div class="col-md-6">
+            {{ item.name }} <button type="submit" class="btn btn-xs btn-danger" ng-click="deleteAnswer(item)">Delete</button>
+            <ul>
+              <li ng-repeat="comment in item.comments track by $index">{{ comment }}</li>
+            </ul>
+            <form ng-submit="addComment(item, commentText); commentText=null;" class="form-inline" role="form">
+              <div class="form-group">
+                <textarea type="text" ng-model="commentText" class="form-control" placeholder="Comment here" required></textarea>
+              </div>
+              <button type="submit" class="btn btn-default btn-xs">Submit</button>
+            </form>
         </div>
       </div>
     </li>

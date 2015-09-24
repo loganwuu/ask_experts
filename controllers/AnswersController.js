@@ -12,10 +12,9 @@ AskExperts.controller('AnswersCtrl', function AnswersCtrl($scope, $stateParams, 
     $scope.question.answered = false;
   };
 
-  $scope.addComment = function(answer) {
+  $scope.addComment = function(answer, commentText) {
     var index = $scope.question.answers.indexOf(answer);
-    $scope.question.answers[index].comments.push({ text: $scope.commentText });
-    $scope.commentText = null;
+    $scope.question.answers[index].comments.push(commentText);
   };
 
   $scope.addUpvote = function(answer) {
