@@ -1,6 +1,6 @@
 # Ask-Experts with AngularJS
 
-##### A website that allows users to post questions and get replies by other experts. (9/23/15)
+##### A website that allows users to post questions and get replies by other experts. (9/23/15 - 9/24/15)
 
 #### By Logan Wu & Chris Swan
 

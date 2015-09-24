@@ -9,6 +9,7 @@
         <div class="col-md-6">
             {{ item.name }} <button type="submit" class="btn btn-xs btn-danger" ng-click="deleteAnswer(item)">Delete</button>
             <ul>
+              <!-- show comments of each answer by the index of that answer -->
               <li ng-repeat="comment in item.comments track by $index">{{ comment }}</li>
             </ul>
             <form ng-submit="addComment(item, commentText); commentText=null;" class="form-inline" role="form">
