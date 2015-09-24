@@ -1,8 +1,17 @@
 <div ng-show="question.answers.length">
   <h2>Answers for: {{ question.name }}</h2>
   <ul>
-    <li ng-repeat="item in question.answers">
-      <a ui-sref="answers.comments({ answerId: item.id })">{{ item.name }}</a>
+    <li ng-repeat="item in question.answers | orderBy: '-totalVote'">
+      <div class="row">
+        <div class="col-md-1">
+          <a href="" ng-click="addUpvote(item)"><i class="fa fa-arrow-up"></i></a>{{ item.upvotes }}<br>
+          <a href="" ng-click="addDownvote(item)"><i class="fa fa-arrow-down"></i></a> {{ item.downvotes }} <br>
+          <p>{{ item.totalVote }}</p>
+        </div>
+        <div class="col-md-8">
+            <a ui-sref="answers.comments({ answerId: item.id })">{{ item.name }}</a>
+        </div>
+      </div>
     </li>
   </ul>
 </div>
@@ -11,7 +20,7 @@
   <h3>Add an answer to: {{ question.name }}</h3>
   <form ng-submit="addAnswer()" class="form-inline" role="form">
     <div class="form-group">
-      <textarea type="text" ng-model="answerName" class="form-control" placeholder="Enter an answer"></textarea>
+      <textarea type="text" ng-model="answerName" class="form-control" placeholder="Enter an answer here" required></textarea>
     </div>
     <button type="submit" class="btn btn-default">Submit</button>
   </form>
