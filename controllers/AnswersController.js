@@ -6,6 +6,18 @@ AskExperts.controller('AnswersCtrl', function AnswersCtrl($scope, $stateParams, 
     $scope.answerName = null;
   };
 
+  $scope.deleteAnswer = function(answer) {
+    var index = $scope.question.answers.indexOf(answer);
+    $scope.question.answers.splice(index, 1);
+    $scope.question.answered = false;
+  };
+
+  $scope.addComment = function(answer) {
+    var index = $scope.question.answers.indexOf(answer);
+    $scope.question.answers[index].comments.push({ text: $scope.commentText });
+    $scope.commentText = null;
+  };
+
   $scope.addUpvote = function(answer) {
     var index = $scope.question.answers.indexOf(answer);
     $scope.question.answers[index].upvotes += 1;

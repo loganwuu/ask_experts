@@ -1,19 +1,22 @@
+<h1>Ask-Experts!</h1>
+
 <div ng-show="questions.length">
   <h4>Search questions by key terms:</h4>
   <form class="form-inline" role="form">
     <div class="form-group">
-      <input ng-model="query.$" type="text" class="form-control" id="question-name" required>
+      <textarea ng-model="query.$" type="text" class="form-control" placeholder="Find a question" id="question-name" required></textarea>
       <div id="checkbox">
         <label><input ng-model="query.answered" type="checkbox" class="form-control" ng-true-value="true" ng-false-value="" toggle-class="toggle-calm">Show answered question(s) only</label>
       </div>
     </div>
   </form>
+  <hr/>
 
   <h1 ng-show="questions.length && filtered.length">Here are all of your questions:</h1>
   <h1 ng-show="questions.length && !filtered.length">No Matches</h1>
   <ul>
     <li ng-repeat="item in filtered = (questions | filter:query)">
-      <a ui-sref="questions.answers({ questionId: item.id })">{{ item.name }}</a>
+      <a ui-sref="questions.answers({ questionId: item.id })">{{ item.name }}</a> <i class="fa fa-check-circle-o" ng-show="item.answered"></i>
     </li>
   </ul>
 </div>
@@ -26,8 +29,8 @@
   <h2>Ask a new question:</h2>
   <form ng-submit="QuestionsFactory.addQuestion()" class="form-inline" role="form">
     <div class="form-group">
-      <input type="text" ng-model="QuestionsFactory.questionName" class="form-control" placeholder="Enter a question" required>
+      <textarea type="text" ng-model="QuestionsFactory.questionName" class="form-control" placeholder="Ask a question" required></textarea>
     </div>
-    <button type="submit" class="btn btn-default">Submit</button>
+    <button type="submit" class="btn btn-success">Submit</button>
   </form>
 <!-- </div> -->
